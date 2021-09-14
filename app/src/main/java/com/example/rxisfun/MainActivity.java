@@ -52,17 +52,23 @@ public class MainActivity extends AppCompatActivity {
             }
             @Override
             public void onNext(Task task) { // run on main thread
-                Log.e("observing task", "onNext : " + task.getDescription());
+               // Log.e("observing task", "onNext : " + task.getDescription());
             }
             @Override
             public void onError(Throwable e) {
-                Log.e("observing task", "onError : " + e.toString());
+               // Log.e("observing task", "onError : " + e.toString());
             }
             @Override
             public void onComplete() {
-                Log.e("observing task complete", " true");
+                //Log.e("observing task complete", " true");
             }
         });
+
+        //binding.baal.setImageBitmap(getIntent().getParcelableExtra("bitmap"));
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, CameraFragment.newInstance())
+                .commit();
 
     }
 
